@@ -1,0 +1,12 @@
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Generate Certificate</button>
+  </form>
+  
+  {% if cert_path %}
+    <h3>Generated Certificate:</h3>
+    <img src="{{ cert_path }}" alt="Certificate" width="600">
+    
+  {% endif %}
+  

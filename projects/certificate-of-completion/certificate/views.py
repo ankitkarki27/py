@@ -1,6 +1,5 @@
 from django.shortcuts import render
 
-# Create your views here.
 from django.shortcuts import render
 from .forms import CertificateForm
 from PIL import Image, ImageDraw, ImageFont
@@ -19,17 +18,19 @@ def generate_certificate(request):
                 os.makedirs(settings.MEDIA_ROOT)
 
             # Load certificate template
-            template_path = os.path.join(settings.BASE_DIR, 'certificate/static/images/certificate_template.jpg')
+            template_path = os.path.join(
+                settings.BASE_DIR, 'certificate/static/images/certificate_template.jpg')
+            
             image = Image.open(template_path)
 
             # Draw text (e.g., name) onto the image
             draw = ImageDraw.Draw(image)
 
-            # Use a system font if the custom font isn't found
-            font_path = "C:\\Windows\\Fonts\\arial.ttf"  # Example for Windows, adjust for other OSes
+            # Using a system font 
+            font_path = "C:\\Windows\\Fonts\\arial.ttf" 
             font = ImageFont.truetype(font_path, 60)
 
-            # Add the user's name (You can adjust the position)
+            # user name with x and y coordinate
             draw.text((670, 740), name, font=font, fill="black")
 
             # Convert the image to RGB mode before saving as JPEG

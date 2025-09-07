@@ -31,7 +31,6 @@ def generate_certificate(request):
 
                 # Ensure output directory exists
                 os.makedirs(output_dir, exist_ok=True)
-
                 # Load certificate template image
                 img = Image.open(template_path)
                 draw = ImageDraw.Draw(img)

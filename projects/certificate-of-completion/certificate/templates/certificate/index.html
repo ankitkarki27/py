@@ -8,7 +8,7 @@
 <body class="bg-light">
 
 <div class="container py-5">
-    <h2 class="mb-4">🎓 Generate Your Course Certificate</h2>
+    <h2 class="mb-4">Generate Your Course Certificate</h2>
 
     <form method="POST" class="card p-4 shadow-sm bg-white">
         {% csrf_token %}
@@ -28,7 +28,7 @@
             <h4 class="mb-3">✅ Your Generated Certificate</h4>
             <img src="{{ cert_path }}" alt="Generated Certificate" class="img-fluid border rounded shadow-sm" width="800">
             <div class="mt-3">
-                <a href="{{ cert_path }}" download class="btn btn-success">Download Certificate</a>
+                <a href="{{ cert_paath }}" download class="btn btn-success">Download Certificate</a>
             </div>
         </div>
     {% endif %}

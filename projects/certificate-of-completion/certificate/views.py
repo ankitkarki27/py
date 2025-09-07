@@ -50,10 +50,10 @@ def generate_certificate(request):
                 font_date = load_font(font_regular_path, 40)     # Date - Regular
 
                 # Draw text on image (Adjust X/Y positions as per your template)
-                draw.text((170, 210), f"Certificate ID: {certificate_id}", font=font_id, fill=(0, 0, 0))
+                draw.text((180, 240), f"Certificate ID: {certificate_id}", font=font_id, fill=(0, 0, 0))
                 draw.text((170, 700), name, font=font_name, fill=(0, 0, 0))
-                draw.text((170, 940), course_name, font=font_course, fill=(0, 0, 0))
-                draw.text((170, 1040), f"Issued on: {issued_at.strftime('%Y-%m-%d')}", font=font_date, fill=(0, 0, 0))
+                draw.text((170, 920), course_name, font=font_course, fill=(0, 0, 0))
+                draw.text((170, 1000), f"Issued on: {issued_at.strftime('%Y-%m-%d')}", font=font_date, fill=(0, 0, 0))
 
                 # Save certificate image
                 filename = f"{name.split()[0]}_{certificate_id}.png"
